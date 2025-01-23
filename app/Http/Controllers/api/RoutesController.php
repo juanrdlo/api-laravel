@@ -50,7 +50,7 @@ class RoutesController extends Controller
                     'route' => new RouteResource(Route::where('id', Route::latest('id')->first()->id)->first()),
                 ], 409);
             } else {
-                Route::create([
+                Route::insert([
                     'id' => $request->post('id'),
                     'driverId' => $request->post('driver_id'),
                     'notes' => $request->post('notes'),
