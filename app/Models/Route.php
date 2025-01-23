@@ -16,6 +16,6 @@ class Route extends Model
 
     public function driverData()
     {
-        return Driver::where('id', '=', $this->driverId)->get();
+        return Driver::where('id', '=', $this->driverId)->first();
     }
 }
