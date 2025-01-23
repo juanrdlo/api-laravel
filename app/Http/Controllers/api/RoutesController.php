@@ -73,7 +73,7 @@ class RoutesController extends Controller
      */
     public function show($id)
     {
-        return RouteResource::collection(Route::where('id', $id)->first());
+        return RouteResource::make(Route::where('id', $id)->first());
     }
 
     /**
