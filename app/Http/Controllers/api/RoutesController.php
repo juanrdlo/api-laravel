@@ -59,7 +59,7 @@ class RoutesController extends Controller
 
                 return response()->json([
                    'message' => 'Route created successfully',
-                    'route' => new RouteResource(Route::where('id', Route::latest('id')->first()->id)->first()),
+                    'route' => new RouteResource(Route::where('id', $request->post('id'))->first()),
                 ], 201);
             }
         }
