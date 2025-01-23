@@ -73,7 +73,15 @@ class RoutesController extends Controller
      */
     public function show($id)
     {
-        return RouteResource::make(Route::where('id', $id)->first());
+        $route = Route::where('id', $id)->first();
+
+        if (!$route) {
+            return response()->json([
+               'message' => 'Route not found',
+            ], 404);
+        } else {
+            return RouteResource::make($route);
+        }
     }
 
     /**
