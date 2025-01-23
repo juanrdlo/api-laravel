@@ -9,6 +9,8 @@ class Route extends Model
 {
     use HasFactory;
 
+    protected $fillable = ['id'];
+
     public function orders()
     {
         return Order::where('routeId', '=', $this->id)->get();
